@@ -1,0 +1,40 @@
+Question 4: 
+If you use the same PreAuthorize configuration on each method in a class, how can you make the annotations cleaner?
+
+Answer:
+One way to make the "@PreAuthorize" annotations cleaner is to apply the annotations at the class level instead of every method.
+This makes the code cleaner and easier to maintain.
+
+Example:
+
+BEFORE
+
+@Service
+public class Class {
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void method1() {
+        // implementation
+    }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void method2() {
+        // implementation
+    }
+	
+}
+
+AFTER
+
+@Service
+@PreAuthorize("hasRole('ROLE_ADMIN')")
+public class Class {
+
+    public void method1() {
+        // implementation
+    }
+
+    public void method2() {
+        // implementation
+    }
+}
