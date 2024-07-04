@@ -1,0 +1,8 @@
+Question 5:
+Given tables below:
+
+Answer:
+SELECT p.Name, s.Sport, s.Score AS "Total Score"
+FROM players p
+JOIN scores s ON p.Player_no = s.Player_no
+ORDER BY p.Name, s.Sport, s.Score DESC;
